@@ -1,0 +1,13 @@
+/dist/
+/.scratch/
+/.preview-backups/
+/.preview-import-*/
+/evidence/
+/.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.zip
+.DS_Store
+Thumbs.db
