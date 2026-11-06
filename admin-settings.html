@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preview · Settings · JBHC Admin</title>
+
+<meta name="theme-color" content="#faf9f7">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="admin.webmanifest">
+<meta name="apple-mobile-web-app-title" content="JBHC Admin">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/admin.css">
+<style>:root{--accent:#2a2724;--accent-2:#45403b;--accent-rgb:42 39 36;--accent-soft:#d6d0c8;--accent-tint:#ebe7e1;--accent-mark:#8c8378;--dark:#171513;--dark-text:#ddd7cf;--dark-muted:#a8a196;--paper:#faf9f7;--paper-2:#f0eeea;}</style><script src="preview-shim.js"></script>
+<link rel="stylesheet" href="assets/css/preview.css">
+<script>var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.remove('js')},4000);</script>
+<script src="assets/js/admin.js" defer></script>
+</head>
+<body class="admin  ">
+<div class="preview-banner" role="note"><strong>Admin demo</strong> with made-up sample requests and visitor numbers. Nothing you change here is saved. <a href="index.html">Back to the website preview</a></div>
+<header class="a-top">
+  <div class="a-top-row">
+    <a class="a-brand" href="admin.html">
+      <img src="assets/brand/jbhc-mark-96.png" width="32" height="32" alt="">
+      <span>Website Admin</span>
+    </a>
+    <nav class="a-nav" aria-label="Admin">
+              <a href="admin.html">Home</a>
+              <a href="admin-requests.html">Requests <span class="a-badge">2</span></a>
+              <a href="admin-stats.html">Visitors</a>
+              <a href="admin-settings.html" aria-current="page">Settings</a>
+              <a href="admin-health.html">Health</a>
+          </nav>
+    <div class="a-top-actions">
+      <a class="a-quiet" href="index.html" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v5H5V7h5"/></svg><span>View Site</span></a>
+      <form method="post" action="index.html" data-demo-logout>
+        <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">        <button class="a-quiet" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v14h-5"/><path d="M10 8l-4 4 4 4M6 12h9"/></svg><span>Sign Out</span></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="a-main" id="main">
+    <div class="a-wrap a-settings">
+  <header class="a-head">
+    <h1 class="a-title">Settings</h1>
+    <nav class="a-toc" aria-label="Settings sections">
+      <a href="#business">Business Details</a>
+      <a href="#domain">Website Address</a>
+      <a href="#colors">Website Colors</a>
+      <a href="#notify">Request Forwarding</a>
+      <a href="#email">Email Delivery</a>
+      <a href="#privacy">Visitor Statistics</a>
+      <a href="#password">Password</a>
+    </nav>
+  </header>
+
+  
+  <form class="a-card a-form" id="business" method="post" action="admin-settings.html">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="section" value="business">
+    <h2 class="a-h2">Business Details</h2>
+    <p class="a-muted">Shown on every page of the website, in Google results and to AI assistants.</p>
+    <div class="a-field-row">
+      <div class="a-field">
+        <label for="phone">Main phone number</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="off" value="(920) 619-6170" required>
+              </div>
+      <div class="a-field">
+        <label for="phone_label">Whose phone is it?</label>
+        <input id="phone_label" name="phone_label" type="text" value="John Michael, project lead" placeholder="John Michael, project lead">
+      </div>
+    </div>
+        <fieldset class="a-radios">
+      <legend class="a-label">Where Should the Phone Number Show?</legend>
+      <label class="a-radio">
+        <input type="radio" name="phone_display" value="contact" checked>
+        <span><strong>Only on the Contact Page</strong><small>Plus when a customer needs it: an urgent service request, a send that didn't go through, and their own confirmation email.</small></span>
+      </label>
+      <label class="a-radio">
+        <input type="radio" name="phone_display" value="everywhere">
+        <span><strong>On Every Page</strong><small>A call button at the top, on the home page, in the footer and on the Contact page.</small></span>
+      </label>
+      <label class="a-radio">
+        <input type="radio" name="phone_display" value="hidden">
+        <span><strong>Not Shown</strong><small>People reach you through the forms and email only.</small></span>
+      </label>
+    </fieldset>
+    <label class="a-check"><input type="checkbox" name="team_contact" value="1"> Show each team member's own phone and email on the Team and Contact pages</label>
+    <div class="a-field">
+      <label for="email">Public email address</label>
+      <input id="email" name="email" type="email" autocomplete="off" value="service@johnnybhome.com" required>
+          </div>
+
+    <fieldset class="a-hours" data-hours>
+      <legend>Office Hours</legend>
+                    <div class="a-hours-row">
+          <span class="a-hours-day">Monday</span>
+          <label class="visually-hidden" for="open0">Monday opens</label>
+          <input id="open0" type="time" name="hours[0][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close0">Monday closes</label>
+          <input id="close0" type="time" name="hours[0][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[0][closed]" value="1" data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row">
+          <span class="a-hours-day">Tuesday</span>
+          <label class="visually-hidden" for="open1">Tuesday opens</label>
+          <input id="open1" type="time" name="hours[1][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close1">Tuesday closes</label>
+          <input id="close1" type="time" name="hours[1][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[1][closed]" value="1" data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row">
+          <span class="a-hours-day">Wednesday</span>
+          <label class="visually-hidden" for="open2">Wednesday opens</label>
+          <input id="open2" type="time" name="hours[2][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close2">Wednesday closes</label>
+          <input id="close2" type="time" name="hours[2][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[2][closed]" value="1" data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row">
+          <span class="a-hours-day">Thursday</span>
+          <label class="visually-hidden" for="open3">Thursday opens</label>
+          <input id="open3" type="time" name="hours[3][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close3">Thursday closes</label>
+          <input id="close3" type="time" name="hours[3][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[3][closed]" value="1" data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row">
+          <span class="a-hours-day">Friday</span>
+          <label class="visually-hidden" for="open4">Friday opens</label>
+          <input id="open4" type="time" name="hours[4][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close4">Friday closes</label>
+          <input id="close4" type="time" name="hours[4][close]" value="12:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[4][closed]" value="1" data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row is-closed">
+          <span class="a-hours-day">Saturday</span>
+          <label class="visually-hidden" for="open5">Saturday opens</label>
+          <input id="open5" type="time" name="hours[5][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close5">Saturday closes</label>
+          <input id="close5" type="time" name="hours[5][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[5][closed]" value="1" checked data-closed-toggle> Closed</label>
+        </div>
+              <div class="a-hours-row is-closed">
+          <span class="a-hours-day">Sunday</span>
+          <label class="visually-hidden" for="open6">Sunday opens</label>
+          <input id="open6" type="time" name="hours[6][open]" value="09:00">
+          <span class="a-hours-to" aria-hidden="true">to</span>
+          <label class="visually-hidden" for="close6">Sunday closes</label>
+          <input id="close6" type="time" name="hours[6][close]" value="16:00">
+          <label class="a-check a-hours-closed"><input type="checkbox" name="hours[6][closed]" value="1" checked data-closed-toggle> Closed</label>
+        </div>
+          </fieldset>
+    <div class="a-field">
+      <label for="hours_note">Note under the hours <span class="a-optional">(optional)</span></label>
+      <input id="hours_note" name="hours_note" type="text" maxlength="200" value="" placeholder="Evenings and weekends by appointment">
+    </div>
+
+    <div class="a-field">
+      <label for="announcement">Announcement at the top of the website <span class="a-optional">(optional)</span></label>
+      <p class="a-hint" id="ann-hint">For holiday closures and the like. Keep it to one sentence.</p>
+      <input id="announcement" name="announcement" type="text" maxlength="220" value="" placeholder="Our office is closed November 26 and 27 for Thanksgiving." aria-describedby="ann-hint">
+            <label class="a-check"><input type="checkbox" name="announcement_on" value="1"> Show it on the website</label>
+    </div>
+    <button class="a-btn" type="submit">Save Business Details</button>
+  </form>
+
+    <form class="a-card a-form a-colors" id="colors" method="post" action="admin-settings.html" data-color-form data-mode="fixed">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="section" value="colors">
+    <div class="a-head">
+      <h2 class="a-h2">Website Colors</h2>
+      <p class="a-hint" id="colors-hint">The color of the buttons, links and footer. The logo and photos stay the same. Preview opens the home page in those colors without saving anything.</p>
+    </div>
+    <p class="a-now">Showing now: <strong>Charcoal</strong></p>
+    
+    <fieldset class="a-radios a-modes">
+      <legend class="a-label">How Should the Colors Work?</legend>
+      <label class="a-radio">
+        <input type="radio" name="color_mode" value="fixed" checked data-color-mode>
+        <span><strong>Same Colors All Year</strong><small>Pick one scheme below.</small></span>
+      </label>
+      <label class="a-radio">
+        <input type="radio" name="color_mode" value="seasons" data-color-mode>
+        <span><strong>Change With the Seasons</strong><small>Spring, summer, fall and winter each get their own colors, and the website switches by itself on the dates you set.</small></span>
+      </label>
+    </fieldset>
+
+    <fieldset class="a-radios a-schemes" data-mode-panel="fixed" aria-describedby="colors-hint">
+      <legend class="a-label">Colors for the Whole Year</legend>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="charcoal" checked>
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#171513"></i><i style="background:#2a2724"></i><i style="background:#8c8378"></i><i style="background:#ebe7e1"></i></span>              <strong>Charcoal</strong>
+              <small>Black and white, like the logo.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=charcoal" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Charcoal, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="navy">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#111c29"></i><i style="background:#1f3b5c"></i><i style="background:#7d98b5"></i><i style="background:#e2e9f1"></i></span>              <strong>Navy</strong>
+              <small>Deep blue with warm white.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=navy" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Navy, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="bay">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#0f2231"></i><i style="background:#1b5a80"></i><i style="background:#6b9fc0"></i><i style="background:#e0edf5"></i></span>              <strong>Bay blue</strong>
+              <small>A brighter blue, like the water.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=bay" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Bay blue, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="forest">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#12221a"></i><i style="background:#2d5a40"></i><i style="background:#7ba287"></i><i style="background:#e1ebe3"></i></span>              <strong>Forest green</strong>
+              <small>Wisconsin woods.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=forest" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Forest green, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="slate">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#151b20"></i><i style="background:#3a4753"></i><i style="background:#8b98a3"></i><i style="background:#e5e9ec"></i></span>              <strong>Slate</strong>
+              <small>Blue-gray, quiet and modern.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=slate" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Slate, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="cranberry">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#1d1215"></i><i style="background:#8a2846"></i><i style="background:#bf8999"></i><i style="background:#f1e5e9"></i></span>              <strong>Cranberry</strong>
+              <small>Deep red, for the fall harvest.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=cranberry" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Cranberry, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="walnut">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#171513"></i><i style="background:#5b3f28"></i><i style="background:#b48a5e"></i><i style="background:#efe4d4"></i></span>              <strong>Walnut</strong>
+              <small>Warm brown, from the wood in the photos.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=walnut" target="_blank" rel="noopener">Preview<span class="visually-hidden"> Walnut, opens in a new tab</span></a>
+                  </div>
+              <div class="a-scheme">
+          <label class="a-radio">
+            <input type="radio" name="color_scheme" value="custom">
+            <span>
+              <span class="a-swatches" aria-hidden="true"><i style="background:#0d1927"></i><i style="background:#1f3b5c"></i><i style="background:#8493a5"></i><i style="background:#e4e7eb"></i></span>              <strong>Custom</strong>
+              <small>Your own color.</small>
+            </span>
+          </label>
+          <a class="a-preview" href="index.html?scheme=custom&accent=1f3b5c" target="_blank" rel="noopener" data-custom-preview>Preview<span class="visually-hidden"> Custom, opens in a new tab</span></a>
+                      <label class="a-color" for="color_custom">
+              <span>Pick the color</span>
+              <input type="color" id="color_custom" name="color_custom" value="#1f3b5c" data-custom-color>
+            </label>
+                  </div>
+          </fieldset>
+
+    <div class="a-seasons" data-mode-panel="seasons">
+      <p class="a-label">Colors for Each Season</p>
+              <fieldset class="a-season" data-season>
+          <legend class="a-season-name">Spring</legend>
+          <div class="a-season-row">
+            <span class="a-season-label">Starts</span>
+            <label class="visually-hidden" for="s-spring-m">Spring starts: month</label>
+            <select id="s-spring-m" name="season[spring][month]">
+              <option value="1">January</option><option value="2">February</option><option value="3" selected>March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>            </select>
+            <label class="visually-hidden" for="s-spring-d">Spring starts: day</label>
+            <select id="s-spring-d" name="season[spring][day]" class="a-day-select">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20" selected>20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>            </select>
+          </div>
+          <div class="a-season-row">
+            <label class="a-season-label" for="s-spring-scheme">Colors</label>
+            <select id="s-spring-scheme" name="season[spring][scheme]" data-season-scheme>
+              <option value="charcoal">Charcoal</option><option value="navy">Navy</option><option value="bay">Bay blue</option><option value="forest" selected>Forest green</option><option value="slate">Slate</option><option value="cranberry">Cranberry</option><option value="walnut">Walnut</option><option value="custom">Custom color</option>            </select>
+            <label class="visually-hidden" for="s-spring-custom">Spring custom color</label>
+            <input type="color" id="s-spring-custom" name="season[spring][custom]" value="#2d5a40" data-season-custom hidden>
+            <a class="a-preview" href="index.html?scheme=forest" target="_blank" rel="noopener" data-season-preview>Preview<span class="visually-hidden"> Spring colors, opens in a new tab</span></a>
+          </div>
+        </fieldset>
+              <fieldset class="a-season" data-season>
+          <legend class="a-season-name">Summer</legend>
+          <div class="a-season-row">
+            <span class="a-season-label">Starts</span>
+            <label class="visually-hidden" for="s-summer-m">Summer starts: month</label>
+            <select id="s-summer-m" name="season[summer][month]">
+              <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6" selected>June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>            </select>
+            <label class="visually-hidden" for="s-summer-d">Summer starts: day</label>
+            <select id="s-summer-d" name="season[summer][day]" class="a-day-select">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21" selected>21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>            </select>
+          </div>
+          <div class="a-season-row">
+            <label class="a-season-label" for="s-summer-scheme">Colors</label>
+            <select id="s-summer-scheme" name="season[summer][scheme]" data-season-scheme>
+              <option value="charcoal">Charcoal</option><option value="navy">Navy</option><option value="bay" selected>Bay blue</option><option value="forest">Forest green</option><option value="slate">Slate</option><option value="cranberry">Cranberry</option><option value="walnut">Walnut</option><option value="custom">Custom color</option>            </select>
+            <label class="visually-hidden" for="s-summer-custom">Summer custom color</label>
+            <input type="color" id="s-summer-custom" name="season[summer][custom]" value="#1b5a80" data-season-custom hidden>
+            <a class="a-preview" href="index.html?scheme=bay" target="_blank" rel="noopener" data-season-preview>Preview<span class="visually-hidden"> Summer colors, opens in a new tab</span></a>
+          </div>
+        </fieldset>
+              <fieldset class="a-season" data-season>
+          <legend class="a-season-name">Fall</legend>
+          <div class="a-season-row">
+            <span class="a-season-label">Starts</span>
+            <label class="visually-hidden" for="s-fall-m">Fall starts: month</label>
+            <select id="s-fall-m" name="season[fall][month]">
+              <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9" selected>September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>            </select>
+            <label class="visually-hidden" for="s-fall-d">Fall starts: day</label>
+            <select id="s-fall-d" name="season[fall][day]" class="a-day-select">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22" selected>22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>            </select>
+          </div>
+          <div class="a-season-row">
+            <label class="a-season-label" for="s-fall-scheme">Colors</label>
+            <select id="s-fall-scheme" name="season[fall][scheme]" data-season-scheme>
+              <option value="charcoal">Charcoal</option><option value="navy">Navy</option><option value="bay">Bay blue</option><option value="forest">Forest green</option><option value="slate">Slate</option><option value="cranberry" selected>Cranberry</option><option value="walnut">Walnut</option><option value="custom">Custom color</option>            </select>
+            <label class="visually-hidden" for="s-fall-custom">Fall custom color</label>
+            <input type="color" id="s-fall-custom" name="season[fall][custom]" value="#8a2846" data-season-custom hidden>
+            <a class="a-preview" href="index.html?scheme=cranberry" target="_blank" rel="noopener" data-season-preview>Preview<span class="visually-hidden"> Fall colors, opens in a new tab</span></a>
+          </div>
+        </fieldset>
+              <fieldset class="a-season" data-season>
+          <legend class="a-season-name">Winter</legend>
+          <div class="a-season-row">
+            <span class="a-season-label">Starts</span>
+            <label class="visually-hidden" for="s-winter-m">Winter starts: month</label>
+            <select id="s-winter-m" name="season[winter][month]">
+              <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12" selected>December</option>            </select>
+            <label class="visually-hidden" for="s-winter-d">Winter starts: day</label>
+            <select id="s-winter-d" name="season[winter][day]" class="a-day-select">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21" selected>21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>            </select>
+          </div>
+          <div class="a-season-row">
+            <label class="a-season-label" for="s-winter-scheme">Colors</label>
+            <select id="s-winter-scheme" name="season[winter][scheme]" data-season-scheme>
+              <option value="charcoal">Charcoal</option><option value="navy" selected>Navy</option><option value="bay">Bay blue</option><option value="forest">Forest green</option><option value="slate">Slate</option><option value="cranberry">Cranberry</option><option value="walnut">Walnut</option><option value="custom">Custom color</option>            </select>
+            <label class="visually-hidden" for="s-winter-custom">Winter custom color</label>
+            <input type="color" id="s-winter-custom" name="season[winter][custom]" value="#1f3b5c" data-season-custom hidden>
+            <a class="a-preview" href="index.html?scheme=navy" target="_blank" rel="noopener" data-season-preview>Preview<span class="visually-hidden"> Winter colors, opens in a new tab</span></a>
+          </div>
+        </fieldset>
+            <p class="a-hint">Each season runs until the next one starts. The website changes over by itself at midnight on the start date.</p>
+    </div>
+
+    <p class="a-hint">With a custom color, the website works out the darker and lighter shades itself. If the color is too light for white text on buttons, it uses a slightly darker shade so everything stays easy to read.</p>
+    <button class="a-btn" type="submit">Save Colors</button>
+  </form>
+
+    <form class="a-card a-form" id="domain" method="post" action="admin-settings.html">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="section" value="domain">
+    <div class="a-head">
+      <h2 class="a-h2">Website Address</h2>
+      <p class="a-hint" id="domain-hint">The address customers type to reach the website. The admin keeps working on any address, so a mistake here can always be fixed.</p>
+    </div>
+        <div class="a-field">
+      <label for="site_domain">Domain</label>
+      <div class="a-domain"><span aria-hidden="true">https://</span><input id="site_domain" name="site_domain" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" value="johnnybhome.com" required aria-describedby="domain-hint"></div>
+    </div>
+    <label class="a-check"><input type="checkbox" name="canonical_redirect" value="1" checked> Send www., http:// and any other address to this one</label>
+    <label class="a-check"><input type="checkbox" name="force_https" value="1" checked> Always use the secure https:// address</label>
+    <button class="a-btn" type="submit">Save Address</button>
+
+    <div class="a-domain-check" aria-live="polite">
+      <h3 class="a-h3">Does johnnybhome.com Reach This Website?</h3>
+            <a class="a-btn a-btn-ghost" href="admin-settings--checkdomain1.html#domain"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 8a7.5 7.5 0 1 0 .8 6.5"/><path d="M19.5 3.5V8H15"/></svg>Check Now</a>
+    </div>
+
+    <details class="a-steps">
+      <summary>Point johnnybhome.com Here From GoDaddy</summary>
+      <ol>
+        <li>Sign in at godaddy.com and open <strong>My Products</strong>.</li>
+        <li>Next to johnnybhome.com, choose <strong>DNS</strong>.</li>
+        <li>Find the record with type <strong>A</strong> and name <strong>@</strong>. Choose Edit and change the value to <strong>this server's IP address</strong> (your web host lists it in its control panel, often as "Shared IP" or "Server IP"). Save. If there is more than one A record named @, delete the extra ones (any starting with 23.227.38 belong to Shopify).</li>
+        <li>Find the record with type <strong>CNAME</strong> and name <strong>www</strong>. Change the value to <strong>johnnybhome.com</strong> and save.</li>
+        <li>Leave the <strong>MX</strong> and <strong>TXT</strong> records alone. They deliver the email for service@johnnybhome.com and keep Google Search Console working.</li>
+        <li>It usually takes under an hour (at most 48 hours). Then tap <strong>Check Now</strong> above.</li>
+        <li>Once the check is green, sign in to Shopify, go to Settings &rsaquo; Domains and remove johnnybhome.com. Keep the Shopify plan until you're happy with the new site.</li>
+      </ol>
+      <p class="a-hint">If this website is hosted at GoDaddy too, skip steps 3 and 4: in GoDaddy's hosting dashboard, set johnnybhome.com as the website's domain and GoDaddy updates the records for you.</p>
+    </details>
+  </form>
+
+  <form class="a-card a-form" id="notify" method="post" action="admin-settings.html">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="section" value="notify">
+    <div class="a-head">
+      <h2 class="a-h2">Request Forwarding</h2>
+      <p class="a-hint" id="notify-hint">Every request is saved here in the admin and forwarded by email the moment it arrives. To send one kind to several people, separate the addresses with commas.</p>
+    </div>
+    <div class="a-field">
+      <label for="notify_service">Forward service requests to</label>
+      <input id="notify_service" name="notify_service" type="text" inputmode="email" autocomplete="off" spellcheck="false" value="service@johnnybhome.com" required aria-describedby="notify-hint">
+          </div>
+    <div class="a-field">
+      <label for="notify_appointment">Forward appointment requests (new homes) to</label>
+      <input id="notify_appointment" name="notify_appointment" type="text" inputmode="email" autocomplete="off" spellcheck="false" value="service@johnnybhome.com" required aria-describedby="notify-hint">
+          </div>
+    <label class="a-check"><input type="checkbox" name="notify_photos" value="1" checked> Attach the customer's photos to the email</label>
+    <label class="a-check"><input type="checkbox" name="confirm_customer" value="1" checked> Send the customer a copy with their reference number</label>
+    <button class="a-btn" type="submit">Save Forwarding</button>
+  </form>
+
+  <div class="a-card" id="email">
+    <form class="a-form" method="post" action="admin-settings.html" data-transport-form>
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <input type="hidden" name="section" value="email">
+      <h2 class="a-h2">Email Delivery</h2>
+      <p class="a-muted">Requests are always saved here first. This decides how the email about them is sent.</p>
+      <fieldset class="a-radios">
+        <legend class="visually-hidden">How to Send Email</legend>
+                  <label class="a-radio">
+            <input type="radio" name="mail_transport" value="smtp" data-transport>
+            <span><strong>Through Your Email Account</strong><small>Most reliable. The website signs in to a real mailbox (Gmail, Outlook or your host&apos;s email) to send.</small></span>
+          </label>
+                  <label class="a-radio">
+            <input type="radio" name="mail_transport" value="mail" checked data-transport>
+            <span><strong>Through the Web Host</strong><small>Works on most hosts with no setup, but messages sometimes land in spam.</small></span>
+          </label>
+                  <label class="a-radio">
+            <input type="radio" name="mail_transport" value="log" data-transport>
+            <span><strong>Test Mode</strong><small>Saves emails on the server in data/mail instead of sending them.</small></span>
+          </label>
+                  <label class="a-radio">
+            <input type="radio" name="mail_transport" value="none" data-transport>
+            <span><strong>Off</strong><small>No emails. New requests only show up in this admin.</small></span>
+          </label>
+              </fieldset>
+      <div class="a-field-row">
+        <div class="a-field">
+          <label for="mail_from">Send from this address</label>
+          <input id="mail_from" name="mail_from" type="email" value="website@johnnybhome.com" required>
+                  </div>
+        <div class="a-field">
+          <label for="mail_from_name">Sender name</label>
+          <input id="mail_from_name" name="mail_from_name" type="text" value="Johnny B Home Construction website">
+        </div>
+      </div>
+      <div class="a-smtp" data-smtp hidden>
+        <p class="a-hint">Gmail: smtp.gmail.com, port 587, TLS, your Gmail address and an <em>app password</em> (Google Account &rsaquo; Security &rsaquo; App passwords). Outlook or Microsoft 365: smtp.office365.com, port 587, TLS. Your web host's email: usually mail.johnnybhome.com, port 465 with SSL.</p>
+        <div class="a-field-row">
+          <div class="a-field">
+            <label for="smtp_host">Mail server</label>
+            <input id="smtp_host" name="smtp_host" type="text" autocomplete="off" spellcheck="false" value="" placeholder="smtp.gmail.com">
+                      </div>
+          <div class="a-field a-field-small">
+            <label for="smtp_port">Port</label>
+            <input id="smtp_port" name="smtp_port" type="number" inputmode="numeric" min="1" max="65535" value="587">
+                      </div>
+          <div class="a-field a-field-small">
+            <label for="smtp_secure">Security</label>
+            <select id="smtp_secure" name="smtp_secure">
+                              <option value="tls" selected>TLS (587)</option>
+                              <option value="ssl">SSL (465)</option>
+                              <option value="none">None</option>
+                          </select>
+          </div>
+        </div>
+        <div class="a-field-row">
+          <div class="a-field">
+            <label for="smtp_user">Username</label>
+            <input id="smtp_user" name="smtp_user" type="text" autocomplete="off" spellcheck="false" value="" placeholder="you@gmail.com">
+          </div>
+          <div class="a-field">
+            <label for="smtp_pass">Password</label>
+            <input id="smtp_pass" name="smtp_pass" type="password" autocomplete="new-password" value="" placeholder="">
+                      </div>
+        </div>
+      </div>
+      <button class="a-btn" type="submit">Save Email Settings</button>
+    </form>
+    <form class="a-form a-inline-form" method="post" action="admin-settings.html">
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <input type="hidden" name="section" value="test_email">
+      <p class="a-small">Saved your changes? Send a test to service@johnnybhome.com.</p>
+      <button class="a-btn a-btn-ghost a-btn-small" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17z"/><path d="m4 6.5 8 6.5 8-6.5"/></svg>Send a Test Email</button>
+    </form>
+  </div>
+
+  <div class="a-card" id="privacy">
+    <form class="a-form" method="post" action="admin-settings.html">
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <input type="hidden" name="section" value="privacy">
+      <h2 class="a-h2">Visitor Statistics</h2>
+      <div class="a-field a-field-small">
+        <label for="retention_days">Keep visitor statistics for</label>
+        <div class="a-input-suffix">
+          <input id="retention_days" name="retention_days" type="number" inputmode="numeric" min="30" max="1000" value="400">
+          <span>days</span>
+        </div>
+              </div>
+      <button class="a-btn" type="submit">Save</button>
+    </form>
+    <form class="a-form a-inline-form" id="ignore" method="post" action="admin-settings.html">
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <input type="hidden" name="section" value="ignore">
+      <input type="hidden" name="ignore" value="1">
+      <p class="a-small">Visiting your own site from this device counts as a visit.</p>
+      <button class="a-btn a-btn-ghost a-btn-small" type="submit">Don't Count My Visits on This Device</button>
+    </form>
+  </div>
+
+  <form class="a-card a-form" id="password" method="post" action="admin-settings.html">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="section" value="password">
+    <input type="text" name="username" value="admin" autocomplete="username" hidden>
+    <h2 class="a-h2">Password</h2>
+    <div class="a-field">
+      <label for="current">Current password</label>
+      <input id="current" name="current" type="password" autocomplete="current-password" required>
+          </div>
+    <div class="a-field-row">
+      <div class="a-field">
+        <label for="new">New password</label>
+        <input id="new" name="new" type="password" autocomplete="new-password" minlength="10" required>
+              </div>
+      <div class="a-field">
+        <label for="again">New password again</label>
+        <input id="again" name="again" type="password" autocomplete="new-password" minlength="10" required>
+              </div>
+    </div>
+    <p class="a-hint">Changing it signs out every other phone and computer.</p>
+    <button class="a-btn" type="submit">Change Password</button>
+  </form>
+</div>
+</main>
+
+<nav class="a-tabs" aria-label="Admin sections">
+      <a href="admin.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg></span>
+      <span>Home</span>
+    </a>
+      <a href="admin-requests.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13.5 6.5 5h11l2.5 8.5V19H4z"/><path d="M4 13.5h4.5l1.2 2.2h4.6l1.2-2.2H20"/></svg><span class="a-dot-count">2</span></span>
+      <span>Requests</span>
+    </a>
+      <a href="admin-stats.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16"/><path d="M7 16.5V11M12 16.5V6.5M17 16.5V9"/></svg></span>
+      <span>Visitors</span>
+    </a>
+      <a href="admin-settings.html" aria-current="page">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7h9M18 7h1M5 17h3M12 17h7"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+      <span>Settings</span>
+    </a>
+      <a href="admin-health.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l2.2-5 3.6 10 2.4-5H21"/></svg></span>
+      <span>Health</span>
+    </a>
+  </nav>
+</body>
+</html>

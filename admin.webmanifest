@@ -1,0 +1,62 @@
+{
+ "id": "./admin.html",
+ "name": "JBHC Website Admin (demo)",
+ "short_name": "JBHC Admin",
+ "description": "Requests, visitors and settings for the Johnny B Home Construction website.",
+ "start_url": "./admin.html",
+ "scope": "./",
+ "shortcuts": [
+  {
+   "name": "Requests",
+   "url": "admin-requests.html",
+   "icons": [
+    {
+     "src": "assets/brand/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png",
+     "purpose": "any"
+    }
+   ]
+  },
+  {
+   "name": "Visitors",
+   "url": "admin-stats.html",
+   "icons": [
+    {
+     "src": "assets/brand/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png",
+     "purpose": "any"
+    }
+   ]
+  }
+ ],
+ "display": "standalone",
+ "background_color": "#faf9f7",
+ "theme_color": "#faf9f7",
+ "lang": "en-US",
+ "dir": "ltr",
+ "categories": [
+  "business"
+ ],
+ "icons": [
+  {
+   "src": "assets/brand/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/brand/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/brand/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

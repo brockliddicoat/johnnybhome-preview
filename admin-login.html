@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preview · Sign In · JBHC Admin</title>
+
+<meta name="theme-color" content="#faf9f7">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="admin.webmanifest">
+<meta name="apple-mobile-web-app-title" content="JBHC Admin">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/admin.css">
+<style>:root{--accent:#2a2724;--accent-2:#45403b;--accent-rgb:42 39 36;--accent-soft:#d6d0c8;--accent-tint:#ebe7e1;--accent-mark:#8c8378;--dark:#171513;--dark-text:#ddd7cf;--dark-muted:#a8a196;--paper:#faf9f7;--paper-2:#f0eeea;}</style><script src="preview-shim.js"></script>
+<link rel="stylesheet" href="assets/css/preview.css">
+<script>var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.remove('js')},4000);</script>
+<script src="assets/js/admin.js" defer></script>
+</head>
+<body class="admin is-bare ">
+<div class="preview-banner" role="note"><strong>Admin demo</strong> with made-up sample requests and visitor numbers. Nothing you change here is saved. <a href="index.html">Back to the website preview</a></div>
+
+<main class="a-main" id="main">
+    <div class="a-gate">
+  <img class="a-gate-mark" src="assets/brand/jbhc-mark-144.png" width="56" height="56" alt="">
+  <h1 class="a-title">Sign In</h1>
+  <p class="a-lede">Johnny B Home Construction Website Admin</p>
+  <div class="demo-note" role="note"><strong>Demo:</strong> any password opens the sample admin here. The real admin only opens with your password.</div>
+
+    
+  <form method="post" action="admin-login.html" data-demo-login class="a-form">
+    <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">    <input type="hidden" name="next" value="/admin">
+    <input type="text" name="username" value="admin" autocomplete="username" hidden>
+    <div class="a-field">
+      <label for="password">Password</label>
+      <div class="a-password">
+        <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+        <button type="button" class="a-reveal a-reveal-text" data-reveal-password aria-controls="password" aria-pressed="false"><span data-reveal-word>Show</span><span class="visually-hidden"> password</span></button>
+      </div>
+    </div>
+    <button class="a-btn a-btn-wide" type="submit">Sign In</button>
+  </form>
+  <p class="a-small">After you sign in, this phone or computer stays signed in. Typing johnnybhome.com on it opens the admin first. It only asks for the password again if you sign out or don't use it for 90 days.</p>
+  <p class="a-small">Forgot the password? Ask whoever looks after the website to reset it.</p>
+  <p class="a-small"><a href="index.html">Back to the Website</a></p>
+</div>
+</main>
+
+</body>
+</html>

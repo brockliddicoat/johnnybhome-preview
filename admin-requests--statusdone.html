@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preview · Requests · JBHC Admin</title>
+
+<meta name="theme-color" content="#faf9f7">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="admin.webmanifest">
+<meta name="apple-mobile-web-app-title" content="JBHC Admin">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/admin.css">
+<style>:root{--accent:#2a2724;--accent-2:#45403b;--accent-rgb:42 39 36;--accent-soft:#d6d0c8;--accent-tint:#ebe7e1;--accent-mark:#8c8378;--dark:#171513;--dark-text:#ddd7cf;--dark-muted:#a8a196;--paper:#faf9f7;--paper-2:#f0eeea;}</style><script src="preview-shim.js"></script>
+<link rel="stylesheet" href="assets/css/preview.css">
+<script>var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.remove('js')},4000);</script>
+<script src="assets/js/admin.js" defer></script>
+</head>
+<body class="admin  ">
+<div class="preview-banner" role="note"><strong>Admin demo</strong> with made-up sample requests and visitor numbers. Nothing you change here is saved. <a href="index.html">Back to the website preview</a></div>
+<header class="a-top">
+  <div class="a-top-row">
+    <a class="a-brand" href="admin.html">
+      <img src="assets/brand/jbhc-mark-96.png" width="32" height="32" alt="">
+      <span>Website Admin</span>
+    </a>
+    <nav class="a-nav" aria-label="Admin">
+              <a href="admin.html">Home</a>
+              <a href="admin-requests.html" aria-current="page">Requests <span class="a-badge">2</span></a>
+              <a href="admin-stats.html">Visitors</a>
+              <a href="admin-settings.html">Settings</a>
+              <a href="admin-health.html">Health</a>
+          </nav>
+    <div class="a-top-actions">
+      <a class="a-quiet" href="index.html" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v5H5V7h5"/></svg><span>View Site</span></a>
+      <form method="post" action="index.html" data-demo-logout>
+        <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">        <button class="a-quiet" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v14h-5"/><path d="M10 8l-4 4 4 4M6 12h9"/></svg><span>Sign Out</span></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="a-main" id="main">
+    <div class="a-wrap">
+  <header class="a-head a-head-row">
+    <h1 class="a-title">Requests</h1>
+    <a class="a-quiet" href="#" data-demo-off="The spreadsheet download works on the real admin."><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M5 19.5h14"/></svg><span>Download CSV</span></a>
+  </header>
+
+  <nav class="a-chips" aria-label="Filter by status">
+          <a class="a-chip" href="admin-requests.html">
+        All <span class="a-chip-count">7</span>
+      </a>
+          <a class="a-chip" href="admin-requests--statusnew.html">
+        New <span class="a-chip-count">2</span>
+      </a>
+          <a class="a-chip" href="admin-requests--statuscontacted.html">
+        Contacted <span class="a-chip-count">2</span>
+      </a>
+          <a class="a-chip" href="admin-requests--statusscheduled.html">
+        Scheduled <span class="a-chip-count">2</span>
+      </a>
+          <a class="a-chip" href="admin-requests--statusdone.html" aria-current="true">
+        Done <span class="a-chip-count">1</span>
+      </a>
+          <a class="a-chip" href="admin-requests--statusspam.html">
+        Spam <span class="a-chip-count">1</span>
+      </a>
+      </nav>
+
+  <form class="a-filters" method="get" action="admin-requests.html" role="search">
+    <input type="hidden" name="status" value="done">    <label class="visually-hidden" for="kind">Type of request</label>
+    <select id="kind" name="kind" data-autosubmit>
+      <option value="all" selected>New homes and service</option>
+      <option value="appointment">New homes only</option>
+      <option value="service">Service only</option>
+    </select>
+    <div class="a-search">
+      <label class="visually-hidden" for="q">Search requests</label>
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>      <input id="q" name="q" type="search" value="" placeholder="Name, phone, address, reference" autocomplete="off">
+    </div>
+    <button class="a-btn a-btn-small a-btn-ghost" type="submit">Search</button>
+  </form>
+
+      <p class="a-count">1 request</p>
+    <ul class="a-list" role="list">
+      <li class="a-row">
+  <a href="admin-request-7.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-service">Service</span>
+            <span class="a-row-time">Oct 24</span>
+    </span>
+    <span class="a-row-name">Jessica Nowak</span>
+    <span class="a-row-sub">Siding</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-done">Done</span>
+            <span class="a-ref">S-4CFU</span>
+    </span>
+  </a>
+</li>
+    </ul>
+      </div>
+</main>
+
+<nav class="a-tabs" aria-label="Admin sections">
+      <a href="admin.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg></span>
+      <span>Home</span>
+    </a>
+      <a href="admin-requests.html" aria-current="page">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13.5 6.5 5h11l2.5 8.5V19H4z"/><path d="M4 13.5h4.5l1.2 2.2h4.6l1.2-2.2H20"/></svg><span class="a-dot-count">2</span></span>
+      <span>Requests</span>
+    </a>
+      <a href="admin-stats.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16"/><path d="M7 16.5V11M12 16.5V6.5M17 16.5V9"/></svg></span>
+      <span>Visitors</span>
+    </a>
+      <a href="admin-settings.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7h9M18 7h1M5 17h3M12 17h7"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+      <span>Settings</span>
+    </a>
+      <a href="admin-health.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l2.2-5 3.6 10 2.4-5H21"/></svg></span>
+      <span>Health</span>
+    </a>
+  </nav>
+</body>
+</html>

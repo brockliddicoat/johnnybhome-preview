@@ -1,0 +1,76 @@
+{
+ "id": "./index.html",
+ "name": "Johnny B Home Construction (preview)",
+ "short_name": "JBHC",
+ "description": "Custom homes in the Green Bay area. Set up an appointment, ask for service, or call the office.",
+ "start_url": "./index.html",
+ "scope": "./",
+ "shortcuts": [
+  {
+   "name": "Request Service",
+   "short_name": "Service",
+   "url": "service.html",
+   "icons": [
+    {
+     "src": "assets/brand/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png",
+     "purpose": "any"
+    }
+   ]
+  },
+  {
+   "name": "Set Up an Appointment",
+   "short_name": "Appointment",
+   "url": "appointment.html",
+   "icons": [
+    {
+     "src": "assets/brand/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png",
+     "purpose": "any"
+    }
+   ]
+  },
+  {
+   "name": "Floor Plans",
+   "url": "floor-plans.html",
+   "icons": [
+    {
+     "src": "assets/brand/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png",
+     "purpose": "any"
+    }
+   ]
+  }
+ ],
+ "display": "standalone",
+ "background_color": "#faf9f7",
+ "theme_color": "#faf9f7",
+ "lang": "en-US",
+ "dir": "ltr",
+ "categories": [
+  "business"
+ ],
+ "icons": [
+  {
+   "src": "assets/brand/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/brand/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "assets/brand/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

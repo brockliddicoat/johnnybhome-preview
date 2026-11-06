@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preview · Home · JBHC Admin</title>
+
+<meta name="theme-color" content="#faf9f7">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="admin.webmanifest">
+<meta name="apple-mobile-web-app-title" content="JBHC Admin">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/admin.css">
+<style>:root{--accent:#2a2724;--accent-2:#45403b;--accent-rgb:42 39 36;--accent-soft:#d6d0c8;--accent-tint:#ebe7e1;--accent-mark:#8c8378;--dark:#171513;--dark-text:#ddd7cf;--dark-muted:#a8a196;--paper:#faf9f7;--paper-2:#f0eeea;}</style><script src="preview-shim.js"></script>
+<link rel="stylesheet" href="assets/css/preview.css">
+<script>var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.remove('js')},4000);</script>
+<script src="assets/js/admin.js" defer></script>
+</head>
+<body class="admin  ">
+<div class="preview-banner" role="note"><strong>Admin demo</strong> with made-up sample requests and visitor numbers. Nothing you change here is saved. <a href="index.html">Back to the website preview</a></div>
+<header class="a-top">
+  <div class="a-top-row">
+    <a class="a-brand" href="admin.html">
+      <img src="assets/brand/jbhc-mark-96.png" width="32" height="32" alt="">
+      <span>Website Admin</span>
+    </a>
+    <nav class="a-nav" aria-label="Admin">
+              <a href="admin.html" aria-current="page">Home</a>
+              <a href="admin-requests.html">Requests <span class="a-badge">2</span></a>
+              <a href="admin-stats.html">Visitors</a>
+              <a href="admin-settings.html">Settings</a>
+              <a href="admin-health.html">Health</a>
+          </nav>
+    <div class="a-top-actions">
+      <a class="a-quiet" href="index.html" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v5H5V7h5"/></svg><span>View Site</span></a>
+      <form method="post" action="index.html" data-demo-logout>
+        <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">        <button class="a-quiet" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v14h-5"/><path d="M10 8l-4 4 4 4M6 12h9"/></svg><span>Sign Out</span></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="a-main" id="main">
+    <div class="a-wrap">
+  <header class="a-head">
+    <p class="a-eyebrow">Friday, November 6</p>
+    <h1 class="a-title">Good morning.</h1>
+  </header>
+
+  <section class="a-card a-install" data-admin-install hidden aria-labelledby="install-h">
+    <div class="a-install-head">
+      <img src="assets/brand/icon-192.png" width="48" height="48" alt="">
+      <div>
+        <h2 class="a-h3" id="install-h">Put the Admin on Your Home Screen</h2>
+        <p class="a-small">New requests are one tap away, like an app. You'll sign in once inside it.</p>
+      </div>
+    </div>
+    <p class="a-small a-install-steps" data-admin-install-steps hidden>On iPhone: in Safari, tap Share, then <strong>Add to Home Screen</strong>. On newer iPhones, Share is in the <strong>&bull;&bull;&bull;</strong> menu.</p>
+    <div class="a-install-actions">
+      <button type="button" class="a-btn" data-admin-install-go hidden>Add to Home Screen</button>
+      <button type="button" class="a-btn a-btn-ghost" data-admin-install-hide>Hide This</button>
+    </div>
+  </section>
+
+  
+  <section class="a-figures" aria-label="At a glance">
+    <a class="a-hero-figure" href="admin-requests--statusnew.html">
+      <span class="a-figure-value">2</span>
+      <span class="a-figure-label">New requests</span>
+      <span class="a-figure-note">2 unread requests</span>
+    </a>
+    <div class="a-tiles">
+      <a class="a-tile is-alert" href="admin-requests--kindservice.html">
+        <span class="a-tile-label">Urgent service, not done</span>
+        <span class="a-tile-value">1</span>
+      </a>
+      <a class="a-tile" href="admin-stats--range7d.html">
+        <span class="a-tile-label">Visitors today</span>
+        <span class="a-tile-value">11</span>
+      </a>
+      <a class="a-tile" href="admin-stats--range7d.html">
+        <span class="a-tile-label">Visitors, last 7 days</span>
+        <span class="a-tile-value">136</span>
+      </a>
+      <a class="a-tile" href="admin-stats--range7d.html">
+        <span class="a-tile-label">Calls and texts tapped, 7 days</span>
+        <span class="a-tile-value">7</span>
+      </a>
+      <a class="a-tile" href="admin-requests.html">
+        <span class="a-tile-label">Requests, last 7 days</span>
+        <span class="a-tile-value">4</span>
+      </a>
+      <a class="a-tile" href="admin-health.html">
+        <span class="a-tile-label">Emails that didn't send</span>
+        <span class="a-tile-value">0</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="a-section" aria-labelledby="latest-title">
+    <div class="a-section-head">
+      <h2 id="latest-title" class="a-h2">Latest Requests</h2>
+      <a class="a-link" href="admin-requests.html">All Requests</a>
+    </div>
+          <ul class="a-list" role="list">
+        <li class="a-row is-unread">
+  <a href="admin-request-1.html">
+    <span class="a-row-top">
+      <span class="a-unread" aria-hidden="true"></span><span class="visually-hidden">Unread. </span>      <span class="a-kind a-kind-service">Service</span>
+            <span class="a-row-time">2 hours ago</span>
+    </span>
+    <span class="a-row-name">Dana Schultz</span>
+    <span class="a-row-sub">Cabinets</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-new">New</span>
+      <span class="a-row-photos"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8h3.5L9 5.5h6L16.5 8H20v11H4z"/><circle cx="12" cy="13.2" r="3.4"/></svg>2<span class="visually-hidden"> photos</span></span>      <span class="a-ref">S-RXJU</span>
+    </span>
+  </a>
+</li>
+<li class="a-row is-unread">
+  <a href="admin-request-2.html">
+    <span class="a-row-top">
+      <span class="a-unread" aria-hidden="true"></span><span class="visually-hidden">Unread. </span>      <span class="a-kind a-kind-appointment">New home</span>
+            <span class="a-row-time">yesterday 7:40 pm</span>
+    </span>
+    <span class="a-row-name">Mike and Jen Vandenberg</span>
+    <span class="a-row-sub">The Forester · I have a lot</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-new">New</span>
+            <span class="a-ref">A-MRH7</span>
+    </span>
+  </a>
+</li>
+<li class="a-row is-urgent">
+  <a href="admin-request-3.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-service">Service</span>
+      <span class="a-tag-urgent">Urgent</span>      <span class="a-row-time">Tuesday 7:05 am</span>
+    </span>
+    <span class="a-row-name">Linda Kowalski</span>
+    <span class="a-row-sub">Heating or Cooling</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-contacted">Contacted</span>
+            <span class="a-ref">S-TTXM</span>
+    </span>
+  </a>
+</li>
+<li class="a-row">
+  <a href="admin-request-5.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-appointment">New home</span>
+            <span class="a-row-time">Saturday 12:30 pm</span>
+    </span>
+    <span class="a-row-name">Tom and Carrie Herber</span>
+    <span class="a-row-sub">The Huron · Ready to build soon</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-scheduled">Scheduled</span>
+            <span class="a-ref">A-A3UA</span>
+    </span>
+  </a>
+</li>
+<li class="a-row">
+  <a href="admin-request-6.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-service">Service</span>
+            <span class="a-row-time">Oct 28</span>
+    </span>
+    <span class="a-row-name">Bob and Sue Lemke</span>
+    <span class="a-row-sub">Flooring</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-scheduled">Scheduled</span>
+      <span class="a-row-photos"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8h3.5L9 5.5h6L16.5 8H20v11H4z"/><circle cx="12" cy="13.2" r="3.4"/></svg>1<span class="visually-hidden"> photo</span></span>      <span class="a-ref">S-TVR7</span>
+    </span>
+  </a>
+</li>
+<li class="a-row">
+  <a href="admin-request-7.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-service">Service</span>
+            <span class="a-row-time">Oct 24</span>
+    </span>
+    <span class="a-row-name">Jessica Nowak</span>
+    <span class="a-row-sub">Siding</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-done">Done</span>
+            <span class="a-ref">S-4CFU</span>
+    </span>
+  </a>
+</li>
+<li class="a-row">
+  <a href="admin-request-8.html">
+    <span class="a-row-top">
+            <span class="a-kind a-kind-appointment">New home</span>
+            <span class="a-row-time">Oct 21</span>
+    </span>
+    <span class="a-row-name">Greg Pelnar</span>
+    <span class="a-row-sub">Not sure yet · Just starting to look</span>
+    <span class="a-row-meta">
+      <span class="a-status a-status-contacted">Contacted</span>
+            <span class="a-ref">A-TF3E</span>
+    </span>
+  </a>
+</li>
+      </ul>
+      </section>
+</div>
+</main>
+
+<nav class="a-tabs" aria-label="Admin sections">
+      <a href="admin.html" aria-current="page">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg></span>
+      <span>Home</span>
+    </a>
+      <a href="admin-requests.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13.5 6.5 5h11l2.5 8.5V19H4z"/><path d="M4 13.5h4.5l1.2 2.2h4.6l1.2-2.2H20"/></svg><span class="a-dot-count">2</span></span>
+      <span>Requests</span>
+    </a>
+      <a href="admin-stats.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16"/><path d="M7 16.5V11M12 16.5V6.5M17 16.5V9"/></svg></span>
+      <span>Visitors</span>
+    </a>
+      <a href="admin-settings.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7h9M18 7h1M5 17h3M12 17h7"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+      <span>Settings</span>
+    </a>
+      <a href="admin-health.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l2.2-5 3.6 10 2.4-5H21"/></svg></span>
+      <span>Health</span>
+    </a>
+  </nav>
+</body>
+</html>

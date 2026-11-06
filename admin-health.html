@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preview · Health · JBHC Admin</title>
+
+<meta name="theme-color" content="#faf9f7">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="admin.webmanifest">
+<meta name="apple-mobile-web-app-title" content="JBHC Admin">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/admin.css">
+<style>:root{--accent:#2a2724;--accent-2:#45403b;--accent-rgb:42 39 36;--accent-soft:#d6d0c8;--accent-tint:#ebe7e1;--accent-mark:#8c8378;--dark:#171513;--dark-text:#ddd7cf;--dark-muted:#a8a196;--paper:#faf9f7;--paper-2:#f0eeea;}</style><script src="preview-shim.js"></script>
+<link rel="stylesheet" href="assets/css/preview.css">
+<script>var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!d.classList.contains('js-ready'))d.classList.remove('js')},4000);</script>
+<script src="assets/js/admin.js" defer></script>
+</head>
+<body class="admin  ">
+<div class="preview-banner" role="note"><strong>Admin demo</strong> with made-up sample requests and visitor numbers. Nothing you change here is saved. <a href="index.html">Back to the website preview</a></div>
+<header class="a-top">
+  <div class="a-top-row">
+    <a class="a-brand" href="admin.html">
+      <img src="assets/brand/jbhc-mark-96.png" width="32" height="32" alt="">
+      <span>Website Admin</span>
+    </a>
+    <nav class="a-nav" aria-label="Admin">
+              <a href="admin.html">Home</a>
+              <a href="admin-requests.html">Requests <span class="a-badge">2</span></a>
+              <a href="admin-stats.html">Visitors</a>
+              <a href="admin-settings.html">Settings</a>
+              <a href="admin-health.html" aria-current="page">Health</a>
+          </nav>
+    <div class="a-top-actions">
+      <a class="a-quiet" href="index.html" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 14v5H5V7h5"/></svg><span>View Site</span></a>
+      <form method="post" action="index.html" data-demo-logout>
+        <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">        <button class="a-quiet" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 5h5v14h-5"/><path d="M10 8l-4 4 4 4M6 12h9"/></svg><span>Sign Out</span></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="a-main" id="main">
+    <div class="a-wrap a-health">
+  <header class="a-head">
+    <h1 class="a-title">Health</h1>
+    <p class="a-lede">The website works. A few things could be better.</p>
+  </header>
+
+  <section class="a-card" aria-labelledby="checks-title">
+    <h2 id="checks-title" class="visually-hidden">Checks</h2>
+    <ul class="a-checks" role="list">
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP version <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">PHP 8.3.6</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: pdo_sqlite <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (saves requests and settings)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: fileinfo <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (checks that uploads are really photos)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: mbstring <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (handles names and messages with accents)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: openssl <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (sends email securely)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: sodium <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (encrypts the email password)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">PHP extension: gd <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Installed (makes photo previews)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Data folder <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Writable: data</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Photo storage <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Writable</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Database <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">OK (3.8 MB)</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Disk space <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">29051.1 MB free</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-warn">
+          <span class="a-check-mark" aria-hidden="true">!</span>
+          <div>
+            <p class="a-check-label">Upload limits <span class="a-check-word">Check</span></p>
+            <p class="a-check-detail">Largest file 2 MB, largest form 8 MB, up to 20 files</p>
+            <p class="a-check-fix">Set upload_max_filesize = 32M and post_max_size = 64M in your host&apos;s PHP settings (the included .user.ini tries to do this). Phones shrink photos first, so most uploads still work.</p>          </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Email notifications <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Using the web host&apos;s built-in mail. Last email sent Oct 21</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Unsent notifications <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">None</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Admin password <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Changed from the starting password</p>
+                      </div>
+        </li>
+              <li class="a-check-row is-pass">
+          <span class="a-check-mark" aria-hidden="true">✓</span>
+          <div>
+            <p class="a-check-label">Backup file <span class="a-check-word">OK</span></p>
+            <p class="a-check-detail">Nothing waiting</p>
+                      </div>
+        </li>
+          </ul>
+  </section>
+
+  <section class="a-card a-health-actions" aria-labelledby="fix-title">
+    <h2 id="fix-title" class="a-h3">Fix-It Buttons</h2>
+    <form method="post" action="admin-health.html">
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <button class="a-btn a-btn-small a-btn-ghost" name="action" value="test_email" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 6h17v12h-17z"/><path d="m4 6.5 8 6.5 8-6.5"/></svg>Send a Test Email to service@johnnybhome.com</button>
+    </form>
+    <form method="post" action="admin-health.html">
+      <input type="hidden" name="csrf" value="124fd719f90a11441f57e96445ff02bf">      <button class="a-btn a-btn-small a-btn-ghost" name="action" value="retry" type="submit" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 8a7.5 7.5 0 1 0 .8 6.5"/><path d="M19.5 3.5V8H15"/></svg>Retry Unsent Emails</button>
+    </form>
+      </section>
+
+  <section class="a-card" aria-labelledby="errors-title">
+    <h2 id="errors-title" class="a-h3">Problems Visitors Ran Into</h2>
+    <p class="a-muted a-small">Errors reported by visitors' browsers, and photo uploads or forms that failed. A few odd ones from old browsers are normal; the same error over and over is worth a look.</p>
+          <p class="a-muted">None reported.</p>
+      </section>
+
+  <section class="a-card" aria-labelledby="log-title">
+    <h2 id="log-title" class="a-h3">Server Log</h2>
+    <p class="a-muted a-small">The last 0 lines of data/logs/app.log. Useful to whoever maintains the site.</p>
+          <p class="a-muted">The log is empty.</p>
+      </section>
+
+  <p class="a-small a-muted">PHP 8.3.6 · website version 1.0.0 · time zone America/Chicago · server time Nov 6, 11:05 am</p>
+</div>
+</main>
+
+<nav class="a-tabs" aria-label="Admin sections">
+      <a href="admin.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></svg></span>
+      <span>Home</span>
+    </a>
+      <a href="admin-requests.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13.5 6.5 5h11l2.5 8.5V19H4z"/><path d="M4 13.5h4.5l1.2 2.2h4.6l1.2-2.2H20"/></svg><span class="a-dot-count">2</span></span>
+      <span>Requests</span>
+    </a>
+      <a href="admin-stats.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16"/><path d="M7 16.5V11M12 16.5V6.5M17 16.5V9"/></svg></span>
+      <span>Visitors</span>
+    </a>
+      <a href="admin-settings.html">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7h9M18 7h1M5 17h3M12 17h7"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span>
+      <span>Settings</span>
+    </a>
+      <a href="admin-health.html" aria-current="page">
+      <span class="a-tab-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l2.2-5 3.6 10 2.4-5H21"/></svg></span>
+      <span>Health</span>
+    </a>
+  </nav>
+</body>
+</html>
