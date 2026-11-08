@@ -77,6 +77,9 @@ preview notices on forms/admin controls.
 
 ## Changes retained from the migration
 
+- The Lancaster Court showcase and its share-image metadata are removed. The
+  homepage uses the existing Crescent photo instead, and the retired bedroom
+  images are no longer included in the export.
 - The exporter retains the corrected office address, **825 S Huron Road, Suite G**,
   the business phone **+1 (920) 498-3299**, and **as soon as possible** response wording.
   Sample-request street names and the Wisconsin state name remain expanded; the

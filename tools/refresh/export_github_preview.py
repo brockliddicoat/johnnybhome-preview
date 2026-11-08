@@ -131,8 +131,31 @@ def fix_srcset(m):
 maps_url = ''
 
 
+def retire_lancaster_showcase(html):
+    """Keep the removed showcase out of future exports, including share metadata."""
+    hero = re.search(r'<figure class="hero-media">.*?</figure>', html, flags=re.S)
+    if hero and 'Lancaster Court' in hero.group(0):
+        photos = re.findall(r'<span class="ph"[^>]*><picture>.*?</picture></span>', html, flags=re.S)
+        photo = next((p for p in photos if 'tour-crescent-' in p), None)
+        if photo is None:
+            raise ValueError('Cannot replace the retired showcase: The Crescent photo is missing')
+        photo = photo.replace('class="ph"', 'class="ph hero-photo"', 1)
+        photo = re.sub(r';aspect-ratio:[^";]+', '', photo)
+        photo = re.sub(r' sizes="[^"]*"', ' sizes="(min-width: 900px) 58vw, 100vw"', photo)
+        photo = photo.replace(' loading="lazy"', '').replace(' decoding="async"', ' decoding="sync"')
+        photo = re.sub(r' style="view-transition-name:[^"]*"', '', photo)
+        photo = photo.replace('<img ', '<img fetchpriority="high" ', 1)
+        replacement = ('<figure class="hero-media">\n      ' + photo
+                       + '\n      <figcaption class="photo-tag"><strong>The Crescent</strong> Custom Home</figcaption>\n    </figure>')
+        html = html[:hero.start()] + replacement + html[hero.end():]
+    html = re.sub(r'<meta property="og:image"[^>]*og-bedroom-[^>]*>\s*'
+                  r'(?:<meta property="og:image:(?:width|height)"[^>]*>\s*)*', '', html)
+    return html
+
+
 def common(html, admin=False):
     global maps_url
+    html = retire_lancaster_showcase(html)
     # Keep Brock's contact details and response wording in every preview export.
     for old, new in (
         ('825 S Huron Rd', '825 S Huron Road, Suite G'),
