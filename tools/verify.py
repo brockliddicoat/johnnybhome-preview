@@ -59,7 +59,11 @@ def audit(site):
             if path.name.startswith("admin"):
                 require("Admin demo" in source, f"{path.name}: missing demo label")
             require(not re.search(r"\b(?:Rd|Dr|Ln|Ct|St|Ave|Blvd|Hwy|Pkwy|Cir|Trl)\.?\b", source), f"{path.name}: unexpanded street abbreviation")
-            require("825 S Huron" not in source and "Green Bay, WI 54311" not in source, f"{path.name}: unexpanded address")
+            require("Green Bay, WI 54311" not in source, f"{path.name}: unexpanded state name")
+            office_addresses = re.findall(r"\b825 (?:South|S\.?) Huron (?:Road|Rd)(?:, Suite G)?", source)
+            require(all(address == "825 S Huron Road, Suite G" for address in office_addresses), f"{path.name}: outdated office address or missing Suite G")
+            require("619-6170" not in source and "6196170" not in source, f"{path.name}: outdated business phone number")
+            require(not re.search(r"\b24\s+(?:(?:working|business)\s+)?hours\b", source, re.I), f"{path.name}: outdated response-time promise")
             for _, attrs in page.tags:
                 for attr in ("src", "href", "action", "poster"):
                     if attrs.get(attr):

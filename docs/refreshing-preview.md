@@ -77,12 +77,14 @@ preview notices on forms/admin controls.
 
 ## Changes retained from the migration
 
-- The exporter spells out the office and sample-request street addresses, directions,
-  and Wisconsin state name. The demo seed uses the expanded addresses too.
+- The exporter retains the corrected office address, **825 S Huron Road, Suite G**,
+  the business phone **+1 (920) 498-3299**, and **as soon as possible** response wording.
+  Sample-request street names and the Wisconsin state name remain expanded; the
+  demo seed uses the expanded sample addresses too.
 - Every exported page, including the offline page, receives a preview banner.
 - `noindex, nofollow`, the preview shim, relative asset paths, app manifests, and the
   live Google map embeds remain part of the GitHub export.
 
-These are preview/export changes. Apply the same address wording to the production
-PHP templates separately when those sources become available. Never point
+These are preview/export changes. Apply the same contact details and response wording
+to the production PHP templates separately when those sources become available. Never point
 `johnnybhome.com` at this review preview or add a `CNAME` file.

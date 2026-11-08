@@ -71,9 +71,10 @@ template source. Keep lasting changes in the PHP source when it becomes availabl
 or in the exporter when they are preview-specific. See the
 [refresh guide](docs/refreshing-preview.md).
 
-Addresses are written in full, including **825 South Huron Road, Green Bay,
-Wisconsin 54311**. The verifier catches the old street abbreviations. Google's own
-map labels are controlled by Google.
+The office address is **825 S Huron Road, Suite G, Green Bay, Wisconsin 54311**,
+and the main phone number is **+1 (920) 498-3299**. Response wording says
+**“We’ll get back to you as soon as possible.”** The verifier catches outdated
+contact details and response promises. Google's own map labels are controlled by Google.
 
 ## Deployment
 

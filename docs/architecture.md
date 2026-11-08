@@ -29,7 +29,8 @@ output paths or source symlinks and only replaces this checkout's generated
 - relative navigation and asset paths, including CSS URLs and responsive images;
 - manifests, icons, start URLs, and project-scoped app installation;
 - preview banners, `noindex, nofollow`, the submission-blocking shim, and admin-demo labels;
-- expanded address spelling and the four live Google map embeds;
+- the corrected office address (including Suite G), current business phone, response
+  wording, expanded sample-address spelling, and the four live Google map embeds;
 - exclusion of PHP, databases, environment files, Git metadata, and maintenance directories.
 
 Optional `--url` verification downloads each public file and compares its SHA-256

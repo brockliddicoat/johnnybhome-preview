@@ -133,14 +133,22 @@ maps_url = ''
 
 def common(html, admin=False):
     global maps_url
-    # Brock's address wording applies to text and accessibility labels on every export.
+    # Keep Brock's contact details and response wording in every preview export.
     for old, new in (
-        ('825 S Huron Rd', '825 South Huron Road'),
+        ('825 S Huron Rd', '825 S Huron Road, Suite G'),
+        ('825 South Huron Road', '825 S Huron Road, Suite G'),
+        ('825 S. Huron Road, Suite G', '825 S Huron Road, Suite G'),
         ('1290 Willow Creek Dr', '1290 Willow Creek Drive'),
         ('845 Ridge Rd', '845 Ridge Road'),
         ('3317 Bay Ridge Ct', '3317 Bay Ridge Court'),
         ('2021 Autumn Leaf Ln', '2021 Autumn Leaf Lane'),
         ('Green Bay, WI 54311', 'Green Bay, Wisconsin 54311'),
+        ('(920) 619-6170', '+1 (920) 498-3299'),
+        ('+19206196170', '+19204983299'),
+        ('within 24 working hours', 'as soon as possible'),
+        ('We will get back to you as soon as possible', 'We’ll get back to you as soon as possible'),
+        ('we will get back to you as soon as possible!', 'we’ll get back to you as soon as possible.'),
+        ('We get back to you as soon as possible.', 'We’ll get back to you as soon as possible.'),
     ):
         html = html.replace(old, new)
     html = re.sub(r'<source type="image/avif"[^>]*>', '', html)
@@ -168,7 +176,7 @@ def common(html, admin=False):
         # an unaltered capture of the same Google embed (Google's own attribution included), and a tap opens Google Maps.
         # Captured at 3x and saved lossless (tools/capture_map.py) so it stays sharp on phone screens.
         def shot(m):
-            alt = 'Google map: Johnny B Home Construction Inc., 825 South Huron Road, Green Bay'
+            alt = 'Google map: Johnny B Home Construction Inc., 825 S Huron Road, Suite G, Green Bay'
             square = '<img src="assets/map/google-square.webp" width="1200" height="1200" alt="' + alt + '" loading="lazy" decoding="async">'
             if admin or 'data-map-square' in m.group(0):
                 pic = square
@@ -337,6 +345,7 @@ if not ARTIFACT:
         admin_man['name'] = admin_man.get('name', 'JBHC Website Admin') + ' (demo)'
         json.dump(admin_man, open(os.path.join(OUT, 'admin.webmanifest'), 'w'), indent=1)
     sw = open(os.path.join(SITE, 'public/sw.js')).read().replace("const OFFLINE = '/offline';", "const OFFLINE = 'offline.html';")
+    sw = sw.replace("const CACHE = 'jbhc-offline-1';", "const CACHE = 'jbhc-offline-2';")
     if "const OFFLINE = 'offline.html';" not in sw:
         sys.exit('sw.js: offline page path not found')
     open(os.path.join(OUT, 'sw.js'), 'w').write(sw)

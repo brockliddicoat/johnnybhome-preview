@@ -12,7 +12,7 @@
  */
 'use strict';
 
-const CACHE = 'jbhc-offline-1';
+const CACHE = 'jbhc-offline-2';
 const OFFLINE = 'offline.html';
 let lastRefresh = 0;
 
