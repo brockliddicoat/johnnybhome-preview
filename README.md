@@ -72,7 +72,7 @@ or in the exporter when they are preview-specific. See the
 [refresh guide](docs/refreshing-preview.md).
 
 The office address is **825 S Huron Road, Suite G, Green Bay, Wisconsin 54311**,
-and the main phone number is **+1 (920) 498-3299**. Response wording says
+and the **JBHC office phone number** is **+1 (920) 498-3299**. Response wording says
 **“We’ll get back to you as soon as possible.”** The verifier catches outdated
 contact details and response promises. Google's own map labels are controlled by Google.
 

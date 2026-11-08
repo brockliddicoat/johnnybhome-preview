@@ -153,9 +153,29 @@ def retire_lancaster_showcase(html):
     return html
 
 
+def preview_upload_limits(html):
+    html = html.replace('data-uploader>', 'data-uploader data-max-files="12" data-max-file-bytes="33554432">')
+    html = html.replace('<p class="hint" id="s-photos-h">A close-up and one wider shot help most. Only our team sees them.</p>',
+                        '<p class="hint" id="s-photos-h">Up to 32 MB per photo. A close-up and one wider shot help most. Only our team sees them.</p>')
+    if '<h1 class="a-title">Health</h1>' in html:
+        html = re.sub(r'<p class="a-lede">.*?</p>',
+                      '<p class="a-lede">Upload limits describe this preview. The other server checks below are sample results from the PHP website, not live checks of GitHub Pages.</p>', html, count=1, flags=re.S)
+        row = ('<li class="a-check-row is-preview">\n'
+               '          <span class="a-check-mark" aria-hidden="true">i</span>\n'
+               '          <div>\n'
+               '            <p class="a-check-label">Upload limits <span class="a-check-word">Preview</span></p>\n'
+               '            <p class="a-check-detail">Up to 12 photos per request, 32 MB per photo.</p>\n'
+               '            <p class="a-check-fix">Checked on your device. Photos stay on your device in this preview; nothing is uploaded or saved. PHP server upload limits do not apply to GitHub Pages.</p>\n'
+               '          </div>\n        </li>')
+        html = re.sub(r'<li class="a-check-row[^\"]*">.*?</li>',
+                      lambda m: row if '<p class="a-check-label">Upload limits ' in m.group(0) else m.group(0), html, flags=re.S)
+    return html
+
+
 def common(html, admin=False):
     global maps_url
     html = retire_lancaster_showcase(html)
+    html = preview_upload_limits(html)
     # Keep Brock's contact details and response wording in every preview export.
     for old, new in (
         ('825 S Huron Rd', '825 S Huron Road, Suite G'),
@@ -168,6 +188,11 @@ def common(html, admin=False):
         ('Green Bay, WI 54311', 'Green Bay, Wisconsin 54311'),
         ('(920) 619-6170', '+1 (920) 498-3299'),
         ('+19206196170', '+19204983299'),
+        ('<h2 class="aside-title">Call or Text</h2>', '<h2 class="aside-title">Office Phone</h2>'),
+        ('<span>John Michael, project lead</span>', '<span>JBHC office</span>'),
+        ('<label for="phone">Main phone number</label>', '<label for="phone">Office phone number</label>'),
+        ('name="phone_label" type="text" value="John Michael, project lead" placeholder="John Michael, project lead"',
+         'name="phone_label" type="text" value="JBHC office" placeholder="JBHC office"'),
         ('within 24 working hours', 'as soon as possible'),
         ('We will get back to you as soon as possible', 'We’ll get back to you as soon as possible'),
         ('we will get back to you as soon as possible!', 'we’ll get back to you as soon as possible.'),
@@ -326,13 +351,10 @@ def patch(rel, pairs):
     open(p, 'w').write(s)
 
 
-patch('assets/js/form.js', [
-    ("new Worker('/assets/js/photo-worker.js')", "new Worker('assets/js/photo-worker.js')"),
-    ("var PATHS = { '': '/contact', appointment: '/appointment', service: '/service' };",
-     "var PATHS = { '': 'contact.html', appointment: 'appointment.html', service: 'service.html' };"),
-    ("var m = location.pathname === '/service' ? 'service' : location.pathname === '/appointment' ? 'appointment' : '';",
-     "var m = /service/.test(location.pathname) ? 'service' : /appointment/.test(location.pathname) ? 'appointment' : '';"),
-])
+# The maintained form code includes local upload validation and Pages-relative URLs.
+# Do not replace those fixes with the older form script from the PHP package.
+shutil.copyfile(os.path.join(os.path.dirname(__file__), '../../src/assets/js/form.js'),
+                os.path.join(OUT, 'assets/js/form.js'))
 patch('assets/js/site.js', [
     ("location.href = '/contact';", "location.href = 'contact.html';"),
     ("navigator.serviceWorker.register('/sw.js')", "navigator.serviceWorker.register('sw.js')"),
@@ -495,6 +517,8 @@ open(os.path.join(OUT, 'assets/css/preview.css'), 'w').write("""/* preview only 
 .demo-toast { position: fixed; left: 50%; bottom: calc(1.25rem + env(safe-area-inset-bottom)); z-index: 100; width: min(92vw, 26rem); padding: 0.9rem 1.1rem; transform: translate(-50%, 1rem); border-radius: 1rem; background: #171513; color: #fff; font: 600 0.9375rem/1.45 Montserrat, Arial, sans-serif; box-shadow: 0 18px 40px -18px rgb(0 0 0 / 0.6); opacity: 0; transition: opacity 250ms, transform 300ms; }
 .demo-toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 .admin .demo-toast { bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+.a-check-row.is-preview .a-check-mark { background: var(--muted); }
+.a-check-row.is-preview .a-check-word { color: var(--muted); }
 .install-preview { padding: 0.6rem 0.75rem; border-radius: 0.75rem; background: #fdf3c4; color: #171513; font-size: 0.875rem; line-height: 1.45; }
 .map-shot { position: absolute; inset: 0; z-index: 2; display: block; }
 .map-shot picture, .map-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }

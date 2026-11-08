@@ -77,11 +77,18 @@ preview notices on forms/admin controls.
 
 ## Changes retained from the migration
 
+- The photo picker accepts up to **12 photos per request**, **32 MB per photo**
+  (33,554,432 bytes). It checks file size and type before processing, keeps valid
+  selections when others are rejected, and allows removal/replacement at the limit.
+  The exporter retains the maintained `src/assets/js/form.js`, including these
+  fixes and its Pages-relative paths, instead of copying the older PHP form script.
+- The admin health page labels upload limits as **Preview** and explains that its
+  PHP server checks are sample results. No server upload or storage is enabled.
 - The Lancaster Court showcase and its share-image metadata are removed. The
   homepage uses the existing Crescent photo instead, and the retired bedroom
   images are no longer included in the export.
 - The exporter retains the corrected office address, **825 S Huron Road, Suite G**,
-  the business phone **+1 (920) 498-3299**, and **as soon as possible** response wording.
+  the **JBHC office** phone **+1 (920) 498-3299**, and **as soon as possible** response wording.
   Sample-request street names and the Wisconsin state name remain expanded; the
   demo seed uses the expanded sample addresses too.
 - Every exported page, including the offline page, receives a preview banner.

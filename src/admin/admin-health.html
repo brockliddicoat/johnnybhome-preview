@@ -47,7 +47,7 @@
     <div class="a-wrap a-health">
   <header class="a-head">
     <h1 class="a-title">Health</h1>
-    <p class="a-lede">The website works. A few things could be better.</p>
+    <p class="a-lede">Upload limits describe this preview. The other server checks below are sample results from the PHP website, not live checks of GitHub Pages.</p>
   </header>
 
   <section class="a-card" aria-labelledby="checks-title">
@@ -130,12 +130,13 @@
             <p class="a-check-detail">29051.1 MB free</p>
                       </div>
         </li>
-              <li class="a-check-row is-warn">
-          <span class="a-check-mark" aria-hidden="true">!</span>
+              <li class="a-check-row is-preview">
+          <span class="a-check-mark" aria-hidden="true">i</span>
           <div>
-            <p class="a-check-label">Upload limits <span class="a-check-word">Check</span></p>
-            <p class="a-check-detail">Largest file 2 MB, largest form 8 MB, up to 20 files</p>
-            <p class="a-check-fix">Set upload_max_filesize = 32M and post_max_size = 64M in your host&apos;s PHP settings (the included .user.ini tries to do this). Phones shrink photos first, so most uploads still work.</p>          </div>
+            <p class="a-check-label">Upload limits <span class="a-check-word">Preview</span></p>
+            <p class="a-check-detail">Up to 12 photos per request, 32 MB per photo.</p>
+            <p class="a-check-fix">Checked on your device. Photos stay on your device in this preview; nothing is uploaded or saved. PHP server upload limits do not apply to GitHub Pages.</p>
+          </div>
         </li>
               <li class="a-check-row is-pass">
           <span class="a-check-mark" aria-hidden="true">✓</span>

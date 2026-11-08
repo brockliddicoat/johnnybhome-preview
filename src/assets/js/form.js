@@ -203,7 +203,9 @@
     var input = $('input[type=file]', box);
     var list = $('[data-thumbs]', box);
     var label = $('[data-upload-label]', box);
-    var MAX = 12;
+    var MAX = Number(box.getAttribute('data-max-files')) || 12;
+    var MAX_BYTES = Number(box.getAttribute('data-max-file-bytes')) || 32 * 1024 * 1024;
+    var MAX_MB = MAX_BYTES / (1024 * 1024);
     var items = [];
     var active = 0;
     var waiters = [];
@@ -323,7 +325,7 @@
     }
     function remove(item) {
       if (item.xhr) try { item.xhr.abort(); } catch (e) { /* ignore */ }
-      if (item.state === 'uploading') active = Math.max(0, active - 1);
+      // run() releases its own slot after preparation or an aborted upload finishes.
       var i = items.indexOf(item);
       if (i >= 0) items.splice(i, 1);
       if (item.url) URL.revokeObjectURL(item.url);
@@ -333,6 +335,7 @@
         else li.remove();
       }
       updateLabel();
+      showNote(form, 'photos', '');
       settle();
       pump();
     }
@@ -418,18 +421,27 @@
 
     input.addEventListener('change', function () {
       var files = Array.prototype.slice.call(input.files || []);
-      var room = MAX - items.length;
-      files.slice(0, room).forEach(function (file) {
+      var tooLarge = 0, empty = 0, notPhotos = 0, extra = 0;
+      var notes = [];
+      clearError(form, 'photos');
+      files.forEach(function (file) {
+        if (!file.size) { empty++; return; }
+        if (file.size > MAX_BYTES) { tooLarge++; return; }
+        var isPhoto = /^image\//i.test(file.type) || /\.(heic|heif)$/i.test(file.name)
+          || (!file.type && /\.(jpe?g|png|gif|webp|avif|bmp|tiff?|svg)$/i.test(file.name));
+        if (!isPhoto) { notPhotos++; return; }
+        if (items.length >= MAX) { extra++; return; }
         var item = { file: file, state: 'queued', level: 0, tries: 0 };
         items.push(item);
         render(item);
         setState(item, 'queued');
       });
-      if (files.length > room) {
-        showNote(form, 'photos', 'Only ' + MAX + ' photos fit. The first ' + room + ' were added.');
-      }
+      if (tooLarge) notes.push(tooLarge + (tooLarge === 1 ? ' file exceeds ' : ' files exceed ') + MAX_MB + ' MB and ' + (tooLarge === 1 ? 'was' : 'were') + ' not added. Choose smaller photos.');
+      if (empty) notes.push(empty + (empty === 1 ? ' empty file was' : ' empty files were') + ' not added.');
+      if (notPhotos) notes.push(notPhotos + (notPhotos === 1 ? ' file is not a photo and was' : ' files are not photos and were') + ' not added.');
+      if (extra) notes.push('Up to ' + MAX + ' photos are allowed. ' + extra + (extra === 1 ? ' extra photo was' : ' extra photos were') + ' not added. Remove a photo to choose another.');
+      showNote(form, 'photos', notes.join(' '));
       input.value = '';
-      clearError(form, 'photos');
       updateLabel();
       pump();
     });
@@ -449,8 +461,11 @@
   function showNote(form, field, text) {
     var box = fieldBox(form, field);
     if (!box) return;
-    var n = $('.field-note', box) || doc.createElement('p');
+    var n = $('.field-note', box);
+    if (!text) { if (n) n.remove(); return; }
+    n = n || doc.createElement('p');
     n.className = 'field-note';
+    n.setAttribute('role', 'status');
     n.textContent = text;
     if (!n.parentNode) box.appendChild(n);
   }
